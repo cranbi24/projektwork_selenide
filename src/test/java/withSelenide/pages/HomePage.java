@@ -20,14 +20,17 @@ public class HomePage extends BasePage {
     WebElement searchField;*/
     SelenideElement searchField = $(Selectors.byXpath("//*[@id=\\\"search-input\\\"]"));
 
-    @FindBy(xpath = "//*[@id=\"search-form\"]/button")
-    WebElement searchButton;
+    /*@FindBy(xpath = "//*[@id=\"search-form\"]/button")
+    WebElement searchButton;*/
+    SelenideElement searchButton = $(Selectors.byXpath("//*[@id=\\\"search-form\\\"]/button"));
 
-    @FindBy(xpath = "//*[@id=\"utility-header-language-switch-link\"]")
-    WebElement languageFlag;
+    /*@FindBy(xpath = "//*[@id=\"utility-header-language-switch-link\"]")
+    WebElement languageFlag;*/
+    SelenideElement languageFlag = $(Selectors.byXpath("//*[@id=\\\"utility-header-language-switch-link\\\"]"));
 
-    @FindBy(xpath = "//*[@id=\"utility-header-registration-link\"]/span")
-    WebElement checkLanguageElement;
+    /*@FindBy(xpath = "//*[@id=\"utility-header-registration-link\"]/span")
+    WebElement checkLanguageElement;*/
+    SelenideElement checkLanguageElement = $(Selectors.byXpath("//*[@id=\\\"utility-header-registration-link\\\"]/span"));
 
     private final String registrationInEnglish = "Register";
     private final String registrationInHungarian = "Regisztráció";
@@ -54,14 +57,6 @@ public class HomePage extends BasePage {
         return searchResultPage;
     }
 
-    public void changeLanguage(String language) {
-        languageFlag.click();
-    }
 
-    public void getCheckLanguageElement(String language) {
-        assertTrue((language.equals("English") && checkLanguageElement.getText().equals(registrationInEnglish))
-                || (language.equals("Hungarian") && checkLanguageElement.getText().equals(registrationInHungarian)));
-
-    }
 }
 
