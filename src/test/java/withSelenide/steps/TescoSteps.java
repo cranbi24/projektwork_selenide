@@ -6,8 +6,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
-import withoutSelenide.pages.HomePage;
-import withoutSelenide.pages.SearchResultPage;
+import withSelenide.pages.HomePage;
+import withSelenide.pages.SearchResultPage;
+
 
 public class TescoSteps {
     protected static WebDriver driver;
